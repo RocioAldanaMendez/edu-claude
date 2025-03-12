@@ -6,14 +6,15 @@ from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-from langchain_openai import ChatOpenAI
+#from langchain_community.llms import OpenAI
+from langchain_community.chat_models import ChatOpenAI
 from typing import List, Dict
 import streamlit as st
 
 class AsistenteEducativo:
     def __init__(self, api_key: str):
         """
-        Inicializa el asistente virtual educativo.
+        Inicializa el asistente virtual 
         
         Args:
             api_key (str): API key de OpenAI
@@ -95,7 +96,7 @@ class AsistenteEducativo:
         }
 
 def main():
-    st.title("Asistente Virtual Educativo")
+    st.title("MVP Asistente PetroIA a escalar")
     
     # Configuración inicial
     if 'asistente' not in st.session_state:
